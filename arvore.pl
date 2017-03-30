@@ -1,34 +1,34 @@
-homem(roberto).
-homem(marcos).
-homem(carlos).
-homem(pedro).
-homem(marcelo).
-homem(rafael).
+homem(yasuyuki).
+homem(yasuchika).
+homem(kenji).
+homem(sidney).
+homem(sidneyjr).
+homem(bruno).
 
-mulher(laura).
-mulher(amanda).
-mulher(ana).
-mulher(maria).
-mulher(isabel).
-mulher(daniela).
+mulher(sonia).
+mulher(kinue).
+mulher(bruna).
+mulher(sophia).
+mulher(val).
+mulher(erika).
 
-pai(roberto, carlos).
-pai(roberto, pedro).
-pai(marcos, ana).
-pai(marcos, maria).
-pai(carlos, marcelo).
-pai(carlos, isabel).
-pai(pedro, rafael).
-pai(pedro, daniela).
+pai(yasuyuki, bruna).
+pai(yasuyuki, kenji).
+pai(yasuyuki, sophia).
+pai(yasuchika, yasuyuki).
+pai(yasuchika, erika).
+pai(sidney, sidneyjr).
+pai(sidney, sonia).
+pai(sidney, bruno).
 
-mae(laura, carlos).
-mae(laura, pedro).
-mae(amanda, ana).
-mae(amanda, maria).
-mae(ana, marcelo).
-mae(ana, isabel).
-mae(maria, rafael).
-mae(maria, daniela).
+mae(sonia, bruna).
+mae(sonia, kenji).
+mae(sonia, sophia).
+mae(kinue, yasuyuki).
+mae(kinue, erika).
+mae(val, sidneyjr).
+mae(val, sonia).
+mae(val, bruno).
 
 filho(X,Y) :- homem(X), pai(Y,X).
 filho(X,Y) :- homem(X), mae(Y,X).
