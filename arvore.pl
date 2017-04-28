@@ -50,8 +50,8 @@ neta(X,Y) :- mulher(X), pai(Y,Z), pai(Z,X).
 neta(X,Y) :- mulher(X), pai(Y,Z), mae(Z,X).
 neta(X,Y) :- mulher(X), mae(Y,Z), pai(Z,X).
 neta(X,Y) :- mulher(X), mae(Y,Z), mae(Z,X).
-tio(X,Y) :- homem(X), irmao(X,Z), pai(Z,Y) | irmao(X,Z), mae(Z,Y).
-tia(X,Y) :- mulher(X), irma(X,Z), pai(Z,Y) | irma(X,Z), mae(Z,Y).
+tio(X,Y) :- homem(X), irmao(X,Z), pai(Z,Y) | irmao(X,Z), mae(Z,Y), not(X=Y).
+tia(X,Y) :- mulher(X), irma(X,Z), pai(Z,Y) | irma(X,Z), mae(Z,Y), not(X=Y).
 sobrinho(X,Y) :- homem(X), tio(Y,X).
 sobrinho(X,Y) :- homem(X), tia(Y,X).
 sobrinha(X,Y) :- mulher(X), tio(Y,X).
