@@ -1,0 +1,96 @@
+*Conceitos basicos de prolog.
+
+    *Definiçã:  Prolog é uma linguagem de programção que é utilizada para resolver problemas que envolvam objetos e relações entre objetos.
+
+    O que consiste um programa de prolog basicamente:
+        
+        *Fatos: declaração de fatos sobre objetos e suas relações.
+        *Regras: declaração de regras sobre objetos e suas relações.
+        *Questões (GOALS): QUESTÕES que são feitas sobre os objetos e suas relações.
+
+    *FATOS
+        Os fatos são os elementos fundamentais do programa em prolog, pois determinam as relações.
+
+        ex: gosta(jose,maria)
+
+        jose: é o predicado ou relaçao
+        maria: Argumento do predicao
+
+        Características dos fatos: 
+
+        • Os nomes dos predicados e dos objetos devem começar com letra minúscula. Por exemplo: joão, casa, gosta. 
+        • Os predicados são escritos primeiro e os objetos são escritos depois, separados por vírgulas. 
+        • Os objetos são escritos dentro de parênteses. 
+        • Todo fato é terminado com um ponto final. 
+        • A ordem dos objetos é importante: gosta (maria, josé). ≠ gosta (josé, maria). 
+        • Uma coleção de fatos é chamada de “banco de conhecimento” ou “banco de dados”. 
+        • Os fatos podem ter um número arbitrário de objetos como argumento. 
+
+        NOTA: Para padronizar a criação de predicados (tanto os fatos quanto as regras), devemos sempre pensar que o predicado é uma propriedade do primeiro objeto do argumento. Assim, “gosta (joão, maria).” deve ser lido como “João gosta de Maria”. 
+
+    *QUESTÕES  (GOAL)
+
+        Uma questão é escrita da mesma maneira que um fato, sendo diferenciada pelo interpretador ou por sua colocação em um local previamente definido e separado dos fatos.
+
+
+        • Quando uma questão é feita, o Prolog realiza uma busca na Base de Conhecimento, procurando um Fato que seja igual ao da questão. 
+        • Dizemos que dois fatos (ou um fato e uma questão) são unificam (são iguais) se: 
+        . seus predicados são os mesmos, 
+        . eles possuem o mesmo número de argumentos e, 
+        . os argumentos são iguais. 
+        gosta (josé, maria). 
+        Predicado ou Relação  
+        Argumento do Predicado, com vários Objetos 
+
+         
+          
+           
+            
+        • Se o Prolog encontra um fato que se iguala a questão, ele retorna “YES”, indicando que a questão tem resposta verdadeira; caso contrário, ele retorna “NO”. 
+        • OBS: O Prolog retornará “NO” toda vez que não conseguir igualar a questão a um fato da Base de Conhecimento. Isso implica que se nada for declarado sobre um determinado problema, qualquer questão relacionada a ele retornara como “NO”. 
+
+
+
+            ESTRUTURA DE UM PROGRAMA PROLOG 
+
+    DOMAINS: parte onde são declaradas as diferentes classes dos objetos usados pelo programa. A declaração das classes dos objetos pode ser vista como uma definição dos tipos de todos os objetos a serem usados no programa.
+
+
+    Exemplo 2: 
+    tipo_pessoa = symbol
+    
+    As classes dos objetos em Prolog são chamadas de domínios, e a cada nova definição como a acima, estamos definindo um novo domínio para os objetos de um programa. 
+
+
+
+ PREDICATES: nesta parte são declarados os predicados que poderão ser usados no programa, indicando o domínio de seus argumentos. A definição de cada predicado pode ser comparada com a declaração do protótipo da função que é feita em linguagem C. Um predicado deve ser definido para cada fato ou regra a ser utilizado no programa.primeiro caracter em minúsculo. Também pode ser uma seqüência entre aspas duplas.  maria, jose, p1999, manoel, flores, maria_fumaça, “Alice”, “Anna Rillo”, dia_d. File um nome válido de um arquivo do DOS exer01.pro, teste.txt 
+
+CLAUSES: nesta parte são declarados todos os fatos e todas as regras do programa. 
+
+GOAL: é a chamada meta, o objetivo do programa. É uma questão que vai dar início ao programa. O objetivo pode ser interno ou externo. Ele é interno se for definido dentro do corpo do programa, e externo, quando é definido interativamente, através da formulação de questões na janela de diálogo. 
+
+DATABASE: parte usada para declarar os predicados usados por um banco de dados dinâmico em um programa. É necessária somente quando se utiliza bancos de dados dinâmicos. 
+
+CONJUNÇÕES
+
+Uma conjunção (“E” Lógico) é feita colocando-se uma vírgula entre os goals
+
+ VARIÁVEIS
+
+ Uma variável em Prolog SEMPRE começa com uma letra maiúscula.
+
+ Uma variável pode estar instanciada ou não-instanciada. Dizemos que ela está instanciada quando estiver assumindo o valor de um objeto e, caso contrário, não-instanciada
+
+
+
+ REGRAS
+
+ As regras são utilizadas para construir relações entre fatos, explicitando as dependências entre eles. 
+ Ao contrário dos fatos, que são incondicionais, as regras especificam coisas que podem ser verdadeiras se algumas condições forem satisfeitas. 
+ As regras possuem duas partes: 
+ • o corpo, que define as condições e se encontra na parte direita da regra, e 
+ • a cabeça, que define a conclusão, e se encontra na parte esquerda da regra. 
+ A cabeça e o corpo são separados pelo símbolo “:-”, que é lido como “SE”. 
+ Uma regra SEMPRE é terminada com um ponto final. 
+
+
